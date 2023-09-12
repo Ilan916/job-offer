@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter_section {
+  position: relative;
+  width: 100%;
+  background-color: #5da5a4;
+  height: 200px;
+  background-image: url('./images/bg-header-desktop.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.filter_bar {
+  position: absolute;
+  max-width: 900px;
+  width: 100%;
+  height: 60px;
+  background-color: #ffff;
+  bottom: calc(0px - 30px);
+  box-shadow: rgba(100, 185, 187, 0.29) 0px 7px 29px 0px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.filter_container {
+  margin-left: 15px;
+  display: flex;
+}
+
+.filter_container_button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.filter_clear_button {
+  font-size: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: #5da5a4;
+  font-weight: 700;
+}
+
+.filter_clear_button:hover {
+  text-decoration: underline;
+}
+
+.filter_container_button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #5da5a4;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.filter_container_button button:hover {
+  background-color: #2c3937;
+  transition: .3s;
+}
+
+.filter_container_button {
+  background-color: #f0fafb;
+  font-size: 12px;
+  color: #5da5a4;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+/* OfferCard Style */
+
+.offerCard-container {
+  margin: 100px auto 0px auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+.OfferCard-content {
+  background-color: #ffff;
+  width: 100%;
+  box-shadow: rgba(100, 185, 187, 0.29) 0px 7px 29px 0px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-left: 2px solid #FFFF;
+  transition: .3s;
+}
+
+.OfferCard-content:hover {
+  border-left: 4px solid #5da5a4;
+  transition: .3s;
+  box-shadow: rgba(83, 154, 156, 0.29) 0px 7px 29px 0px;
+}
+
+.OfferCard-info {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.OfferCard-info img {
+  margin-right: 20px;
+}
+
+.OfferCard-info-text {
+  max-height: 88px;
+}
+
+.OfferCard-info-text p {
+  margin: 0;
+}
+
+.OfferCard-info-company {
+  font-weight: bold;
+  color: #5da5a4;
+  font-weight: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.OfferCard-info-company div {
+  margin-left: 4px;
+  display: flex;
+}
+
+.OfferCard-info-company span {
+  background-color: #5da5a4;
+  color: #FFFF;
+  padding: 6px 8px 4px 8px;
+  border-radius: 50px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 3px
+}
+
+.OfferCard-info-company span:last-child {
+  background-color: #2c3937;
+}
+
+.OfferCard-info-position {
+  color: #2c3937;
+  font-weight: bold;
+  margin: 10px 0 !important;
+}
+
+.OfferCard-info-post {
+  color: #939d9c;
+  font-weight: 700;
+}
+
+.OfferCard-tag-container {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.OfferCard-tag {
+  background-color: #f0fafb;
+  margin: 0 5px;
+  color: #5da5a4;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.OfferCard-tag:hover {
+  background-color: #5da5a4;
+  color: #ffff;
+  transition: .3s;
+}
+
+/* specific class style */
+
+.deleteElement {
+  display: none;
+}
+
+.displayElement {
+  display: block;
+}
+
+.flexElement {
+  display: flex;
+}
+
+.separation {
+  display: none;
+  width: 91%;
+  border-top: solid #939d9c 1px;
+  border-bottom: none;
+}
+
+/* responcive style */
+
+@media screen and (max-width: 900px) {
+
+  .filter_bar {
+    max-width: 96%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .offerCard-container {
+    max-width: 96%;
+  }
+
+  .OfferCard-tag-container {
+    margin-left: 20px;
+  }
+
+  .OfferCard-tag {
+    margin-top: 8px;
+  }
+
+  .OfferCard-info {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 603px) {
+  
+  .separation {
+    display: block;
+  }
+
+  .OfferCard-content{
+    flex-direction: column;
+    align-items: baseline;
   }
 }
